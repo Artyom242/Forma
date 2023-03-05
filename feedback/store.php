@@ -13,6 +13,6 @@ $query->execute(['name'=>$name, 'telephone'=>$telephone]);
 header('Location: /feedback');
 
 $newList = file_get_contents('../requests.txt');
-$data = date("m.d.y");
+$data = date("d.m.y");
 file_put_contents('../requests.txt', "Заявка от: $data \n$name $telephone\n$newList");
 
