@@ -12,9 +12,6 @@
     <input type="text" name="name" placeholder="Ваше имя">
     <input type="number" name="telephone" placeholder="Ваш телефон">
     <input type="submit" value="Отправить">
-    <?php
-
-    ?>
 </form>
 </body>
 </html>
