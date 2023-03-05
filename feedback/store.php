@@ -1,0 +1,18 @@
+<?php
+
+/** @var PDO $db */
+
+$db = require_once $_SERVER['DOCUMENT_ROOT'].'/db.php';
+
+$name = $_POST['name'];
+$telephone = $_POST['telephone'];
+
+$query = $db->prepare('insert into feedback (name,telephone) value (:name,:telephone)');
+$query->execute(['name'=>$name, 'telephone'=>$telephone]);
+
+header('Location: /feedback');
+
+$newList = file_get_contents('../requests.txt');
+$data = date("m.d.y");
+file_put_contents('../requests.txt', "Заявка от: $data \n$name $telephone\n$newList");
+
