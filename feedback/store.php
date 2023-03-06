@@ -11,7 +11,7 @@ $query->execute(['name' => $name, 'telephone' => $telephone]);
 
 header('Location: /feedback');
 
-$newList = file_get_contents($_SERVER['DOCUMENT_ROOT']. '/requests.txt');
+$newList = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/requests.txt');
 $data = date("d.m.y");
-file_put_contents('../requests.txt', "Заявка от: $data \n$name $telephone\n$newList");
+file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/requests.txt', "Заявка от: $data \n$name $telephone\n$newList");
 
