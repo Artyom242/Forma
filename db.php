@@ -1,3 +1,3 @@
 <?php
 
-return new PDO("mysql:host=localhost;dbname=Forma", "root","");
+return new PDO("mysql:host=localhost;dbname=forma", "root","");
